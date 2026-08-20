@@ -1,0 +1,11 @@
+
+1.nginxinc/nginx-unprivileged
+docker run -it --rm --name test-nginx nginxinc/nginx-unprivileged:stable-alpine3.24-perl apt show gpgv
+
+2.rabbitmqoperator/cluster-operator
+最新版本2.22.4
+2026/08/19 未做
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+git clone -b v2.22.4 https://github.com/rabbitmq/cluster-operator.git
+docker build -t customr-registry/cluster-operator:2.22.4 .
+docker save customr-registry/cluster-operator:2.22.4 -o rabbitmq-cluster-operator.2.22.4.tar
