@@ -14,7 +14,8 @@ docker save custom-registry/cluster-operator:2.23.2 -o rabbitmq-cluster-operator
 
 3.rabbitmq
 版本4.3.7
-docker run -it --rm --name test-nginx nginxinc/nginx-unprivileged:1.31.8-alpine apk list libcrypto3 libssl3 musl musl-utils zlib 
+docker run -it --rm --name test-rabbitmq rabbitmq:4.3.7-management-alpine apk list libcrypto3 libssl3 musl musl-utils zlib 
+docker save rabbitmq:4.3.7-management-alpine -o rabbitmq.4.3.7-management-alpine.tar
 
 4.ibank.lbot/bitnami
 可能要執行docker file產生image
