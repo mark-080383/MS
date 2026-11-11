@@ -1,6 +1,6 @@
 1.nginx/nginx-unprivileged
 新版本1.31.8-alpine
-docker run -it --rm --name test-nginx nginxinc/nginx-unprivileged:1.31.8-alpine apk list libcrypto3  libssl3
+docker run -it --rm --name test-nginx nginxinc/nginx-unprivileged:1.31.8-alpine apk list brotli-libs curl libcrypto3 libcurl libexpat libpng libssl3 libuuid libx11 libxpm musl musl-utils nghttp2-libs pcre2 tiff zlib
 docker save nginxinc/nginx-unprivileged:1.31.8-alpine -o nginx-unprivileged.1.31.8-alpine.tar
 
 2.rabbitmqoperator/cluster-operator
@@ -9,11 +9,16 @@ docker save nginxinc/nginx-unprivileged:1.31.8-alpine -o nginx-unprivileged.1.31
 git clone -b v2.23.2 https://github.com/rabbitmq/cluster-operator.git
 cd cluster-operator
 docker build -t custom-registry/cluster-operator:2.23.2 .
+docker run -it --rm --name test-cluster-operator custom-registry/cluster-operator:2.23.2 apk list libcrypto3 libssl3 musl musl-utils zlib 
 docker save custom-registry/cluster-operator:2.23.2 -o rabbitmq-cluster-operator.2.23.2.tar
 
 3.rabbitmq
 版本4.3.7
-skopeo.exe copy --override-os linux --override-arch amd64 docker://rabbitmq:4.3.7-management-alpine docker-archive:rabbitmq-4.3.7-management-alpine.tar
+docker run -it --rm --name test-nginx nginxinc/nginx-unprivileged:1.31.8-alpine apk list libcrypto3 libssl3 musl musl-utils zlib 
 
 4.ibank.lbot/bitnami
+可能要執行docker file產生image
 FROM alpine:3.21
+ENV KUBECTL_VERSION=v1.33.4
+  curl -LO https://dl.k8s.io/release/${KUBECTL_VERSION}/bin/linux/amd64/kubectl \
+?? kubectl version,找不到對應版本
