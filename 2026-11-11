@@ -1,6 +1,6 @@
 1.nginx/nginx-unprivileged
 新版本1.31.8-alpine
-docker run -it --rm --name test-nginx nginxinc/nginx-unprivileged:1.31.8-alpine apk list brotli-libs curl libcrypto3 libcurl libexpat libpng libssl3 libuuid libx11 libxpm musl musl-utils nghttp2-libs pcre2 tiff zlib
+docker run -it --rm --name test-nginx nginx/nginx-unprivileged:1.31.8-alpine apk list brotli-libs curl libcrypto3 libcurl libexpat libpng libssl3 libuuid libx11 libxpm musl musl-utils nghttp2-libs pcre2 tiff zlib
 docker save nginxinc/nginx-unprivileged:1.31.8-alpine -o nginx-unprivileged.1.31.8-alpine.tar
 
 2.rabbitmqoperator/cluster-operator
