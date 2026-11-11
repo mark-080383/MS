@@ -2,7 +2,7 @@ FROM alpine:3.21
 
 # Set the environment variable for kubectl version
 # This is the version of kubectl you want to install. You can change it as needed.
-ENV KUBECTL_VERSION=v1.33.4
+ENV KUBECTL_VERSION=v1.33.4 #??
 # Install required tools and kubectl
 RUN  apk add --no-cache curl bash ca-certificates \
   # && KUBECTL_VERSION=$(curl -s https://storage.googleapis.com/kubernetes-release/release/stable.txt) \
