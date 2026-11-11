@@ -1,0 +1,19 @@
+1.nginx/nginx-unprivileged
+新版本1.31.8-alpine
+docker run -it --rm --name test-nginx nginxinc/nginx-unprivileged:1.31.8-alpine apk list libcrypto3  libssl3
+docker save nginxinc/nginx-unprivileged:1.31.8-alpine -o nginx-unprivileged.1.31.8-alpine.tar
+
+2.rabbitmqoperator/cluster-operator
+新版本2.23.2
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+git clone -b v2.23.2 https://github.com/rabbitmq/cluster-operator.git
+cd cluster-operator
+docker build -t custom-registry/cluster-operator:2.23.2 .
+docker save custom-registry/cluster-operator:2.23.2 -o rabbitmq-cluster-operator.2.23.2.tar
+
+3.rabbitmq
+版本4.3.7
+skopeo.exe copy --override-os linux --override-arch amd64 docker://rabbitmq:4.3.7-management-alpine docker-archive:rabbitmq-4.3.7-management-alpine.tar
+
+4.ibank.lbot/bitnami
+FROM alpine:3.21
